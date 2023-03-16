@@ -2,7 +2,7 @@
 Scripts to run batch/single simulations in Cadence-Spectre by defining the parameter values in MATLAB. This can be done in real time for optimizationn and variability analysis of circuit designs. Read more: A. Chordia and J. N. Tripathi, "An Automated Framework for Variability Analysis for Integrated Circuits Using Metaheuristics," in IEEE Transactions on Signal and Power Integrity, vol. 1, pp. 104-111, 2022, doi: 10.1109/TSIPI.2022.3202150.
 
 ## Requirements:
-1. Sprectre and MATLAB on the same machine.
+1. Spectre and MATLAB on the same machine.
 2. Linux Screen: https://linuxize.com/post/how-to-use-linux-screen/
 
 ## How to use:
@@ -25,10 +25,7 @@ Scripts to run batch/single simulations in Cadence-Spectre by defining the param
 5. If everything goes through, you can see the 'simulation performed sucessfully' message on the MATLAB command line after each performed simulation.
 
 
-
 ### Disclaimer:
 The script has been tested only for Linux.
 
 Please contact: Aksh Chordia, chordia.2@iitj.ac.in in case of any queries.
-
-
