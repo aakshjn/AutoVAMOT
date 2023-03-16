@@ -8,7 +8,7 @@ Scripts to run batch/single simulations in Cadence-Spectre by defining the param
 ## How to use:
 
 ### Initial Setup:
-1. Designing the nomial design in the Spectre environment and perform simulations using ADE-L/ ADE-XL.
+1. Designing the nominal circuit design in the Spectre environment and perform simulations using ADE-L/ ADE-XL (this creates a default netlist).
 2. Define the paramters to be varied as variables.
 3. Generate the corresponding Ocean script from the ADE-L menu.  
 4. Use this script to as a template for generating a new script (this process is done in MATLAB real time) which define the simulation parameters.
