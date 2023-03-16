@@ -1,0 +1,1 @@
+screen -r -X stuff 'load("simulate.ocn")'`echo -ne '\015'`

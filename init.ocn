@@ -1,0 +1,30 @@
+simulator( 'spectre )
+design(	 "/home/vivek/simulation/oscillator/spectre/schematic/netlist/netlist")
+resultsDir( "/home/vivek/simulation/oscillator/spectre/schematic" )
+modelFile( 
+    '("/home/install/FOUNDRY/analog/180nm/models/spectre/gpdk.scs" "stat")
+)
+analysis('pss ?fund "2.4G"  ?harms "5"  ?errpreset "conservative"  
+		?autotstab "yes"  ?oscana t  ?p "/net1"  ?n "/net10"  
+		?oscic "lin"  ?ppv ""  )
+analysis('pnoise ?relharmnum ""  ?start "10"  ?stop "1M"  
+		?p "/net1"  ?n "/net10"  ?oprobe ""  ?noisetype "timeaverage"  
+		?noiseout list("usb")  ?noisetypeUI ""  ?osc_version ""  ?osc_accuracy ""  
+		?ppv ""  )
+desVar(	  "C" 1.3p	)
+desVar(	  "L" 4.35n	)
+desVar(	  "NL" 2u	)
+desVar(	  "NR" 2u	)
+desVar(	  "NT" 2u	)
+desVar(	  "PL" 2u	)
+desVar(	  "PR" 2u	)
+envOption(
+'analysisOrder  list("pss" "pnoise") 
+)
+converge( 'ic "/net1" "0" )
+temp( 27 ) 
+run()
+phsns = rfOutputNoise("dBc/Hz" ?result "pnoise")
+harmfreq = harmonicFreq(mag(v("/net1" ?result "pss_fd")) 1)
+ocnPrint( ?output "outputtest.txt" phsns ?numSpaces 1 ?numberNotation 'scientific)
+ocnPrint( ?output "outputtestfreq.txt" harmfreq ?numSpaces 1 ?numberNotation 'scientific)
