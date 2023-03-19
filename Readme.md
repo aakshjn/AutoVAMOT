@@ -24,6 +24,12 @@ Scripts to run batch/single simulations in Cadence-Spectre by defining the param
 4. Now, start the MATLAB and run the sampling code. 
 5. If everything goes through, you can see the 'simulation performed sucessfully' message on the MATLAB command line after each performed simulation.
 
+### Example shown:
+The file SA_maxima.m contains a small code that maximises the phase noise of an oscillator circuit. The circuit contains 7 design parameters to be optimized. 
+In SA_maxima.m, the function: simulate([args]) takes the design parameters values as argument for simulation in Cadence-spectre.
+
+In simulate.m file, as the simulation is performed, the corresponding results are stored in text file (here, ''outputtest.txt'') which is read by the function: read_ocnPrint(); 
+
 
 ### Disclaimer:
 The script has been tested only for Linux.
